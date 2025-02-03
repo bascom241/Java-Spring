@@ -12,6 +12,7 @@ public class Main {
         ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
         UserManagement userManagement = (UserManagement) context.getBean("userManagement");
         Map<String,Integer> results = userManagement.getCustomerDetails();
+        results.forEach((key,value)-> System.out.print(key+ ": " +  value));
 
 
 
