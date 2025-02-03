@@ -1,0 +1,17 @@
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="userManagement" class="org.example.UserManagement" >
+        <property name="users" ref="user"/>
+    </bean>
+
+
+    <bean id="user" class="org.example.Users">
+        <property name="userName" value="abdulbasit"/>
+        <property name="accountNumber" value="2000"/>
+    </bean>
+</beans>
