@@ -4,18 +4,18 @@
        xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-
-    <bean id="userManagement" class="org.example.UserManagement" >
-        <property name="users" ref="user"/>
-    </bean>
-
-
-    <bean id="user" class="org.example.Users">
+    <bean id="users" class="org.example.Users">
         <property name="userName" value="abdulbasit"/>
-        <property name="accountNumber" value="2000"/>
+        <property name="accountNumber" value="300"/>
+        <property name="userName2" value="abdullahi"/>
+        <property name="accountNumber2" value="500"/>
     </bean>
 
-    <bean id="customer" class="org.example.CustomerManagement">
-        <property name="usermanage" ref="userManagement" />
+    <bean id="usermanagement" class="org.example.UserManagement">
+        <constructor-arg ref="users"/>
+    </bean>
+
+    <bean id="customer" class="org.example.CustomerManagement" autowire="byName">
+        <constructor-arg name="manage" ref="usermanagement"/>
     </bean>
 </beans>
